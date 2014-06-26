@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -37,4 +37,12 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :test, :development do
+  gem 'rspec-rails', '~> 3.0.0'
+end
+
+group :test do
+  gem 'capybara', "2.3.0"
+end
 
