@@ -43,6 +43,10 @@ group :test, :development do
   gem 'rspec-rails', '~> 3.0.0'
 end
 
+gem 'pry', '~> 0.10.0', group: :development
+gem 'pry-rails', '~> 0.3.2', group: :development
+
+
 group :test do
   gem 'capybara', "2.3.0"
 end
