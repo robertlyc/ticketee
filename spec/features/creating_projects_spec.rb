@@ -15,7 +15,7 @@ feature 'Creating Projects' do
     project = Project.where(name: "Textmate 2").first
     expect(page.current_url).to eql(project_url(project))
     
-    # title = "Textmate 2 - Projects - Ticketee"
-    # expect(page).to have_title(title)
+    title = "Textmate 2 - Projects - Ticketee"
+    expect(page).to have_title(title)
   end
 end
