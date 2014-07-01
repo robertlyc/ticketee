@@ -2,10 +2,7 @@ require 'rails_helper'
 
 feature "Profile page" do
   scenario "viewing" do
-    user = FactoryGirl.create(:user, name: "robertlyc", 
-                                     email: "merlinlyc@gmail.com",
-                                     password: "19820121",
-                                     password_confirmation: "19820121")
+    user = FactoryGirl.create(:user)
     visit user_path(user)
     
     expect(page).to have_content user.name
@@ -15,10 +12,7 @@ end
 
 feature "Editing Users" do
   scenario "Updating a project" do
-    user = FactoryGirl.create(:user, name: "robertlyc", 
-                                     email: "merlinlyc@gmail.com",
-                                     password: "19820121",
-                                     password_confirmation: "19820121")
+    user = FactoryGirl.create(:user)
     
     visit user_path(user)
     click_link "Edit Profile"
