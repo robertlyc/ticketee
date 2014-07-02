@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature "Editing projects" do
   before do
+    sign_in_as!(FactoryGirl.create(:admin_user))
     FactoryGirl.create(:project, name: "TextMate 2")
-    
     visit '/'
     click_link 'TextMate 2'
     click_link 'Edit Project'
