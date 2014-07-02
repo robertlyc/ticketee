@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :users
+  end
+
   get 'users/new'
   get 'users/create'
   get 'users/show'
