@@ -2,7 +2,7 @@ source 'http://ruby.taobao.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.2'
+gem 'rails', '4.1.4'
 
 gem 'pg', '~>0.17.0'
 
