@@ -47,6 +47,8 @@ end
 gem 'pry', '~> 0.10.0', group: :development
 gem 'pry-rails', '~> 0.3.2', group: :development
 
+gem 'cancan', '~> 1.6.10'
+
 
 group :test do
   gem 'capybara', "2.3.0"

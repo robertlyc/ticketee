@@ -14,4 +14,26 @@ RSpec.describe TicketsController, :type => :controller do
       expect(flash[:alert]).to eql "The project you were looking for could not be found."
     end
   end
+  
+  context "with promission to view the project" do
+    before do
+      sign_in(user)
+      define_permission!(user, :view, project)
+    end
+    
+    def cannot_create_tickets!
+      expect(response).to redirect_to(project)
+      expect(flash[:alert]).to eql "You cannot create tickets on this project."
+    end
+    
+    it "cannot begin to create a ticket" do
+      get :new, project_id: project.id
+      cannot_create_tickets!
+    end
+    
+    it "cannot create a ticket without permission" do
+      post :create, project_id: project.id
+      cannot_create_tickets!
+    end
+  end
 end

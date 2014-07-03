@@ -22,5 +22,6 @@ end
 
 RSpec.configure do |c|
   c.include AuthenticationHelpers, type: :feature
+  c.include AuthenticationHelpers, type: :controller
   c.include AuthHelpers, type: :controller
 end

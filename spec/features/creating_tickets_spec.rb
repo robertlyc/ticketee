@@ -3,10 +3,11 @@ require 'rails_helper'
 feature 'Creating Tickets' do
   before do
     project = FactoryGirl.create(:project)
-    user = FactoryGirl.create(:user)
-    define_permission!(user, :view, project)
-    @email = user.email
-    sign_in_as!(user)
+    admin = FactoryGirl.create(:admin_user)
+    define_permission!(admin, :view, project)
+    define_permission!(admin, :"create tickerts", project)
+    @email = admin.email
+    sign_in_as!(admin)
     
     visit '/'
     click_link project.name
