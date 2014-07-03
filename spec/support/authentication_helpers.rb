@@ -6,6 +6,12 @@ module AuthenticationHelpers
     click_button 'Sign in'
     expect(page).to have_content "Signed in successfully."
   end
+  
+  def define_permission!(user, action, thing)
+    Permission.create!(user: user,
+                       action: action,
+                       thing: thing)
+  end
 end
 
 module AuthHelpers
