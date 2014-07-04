@@ -3,6 +3,7 @@ require 'rails_helper'
 feature "Editing tickets" do
   let!(:project) {FactoryGirl.create(:project)}
   let!(:user) {FactoryGirl.create(:user)}
+  # let!(:admin) { FactoryGirl.create(:admin_user) }
   let!(:ticket) do
     ticket = FactoryGirl.create(:ticket, project: project)
     ticket.update(user: user)
@@ -11,6 +12,7 @@ feature "Editing tickets" do
   
   before do
     define_permission!(user, :view, project)
+    define_permission!(user, :"edit tickets", project)
     sign_in_as!(user)
     visit '/'
     click_link project.name

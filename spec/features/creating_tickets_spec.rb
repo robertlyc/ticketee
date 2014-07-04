@@ -1,13 +1,15 @@
 require 'rails_helper'
 
 feature 'Creating Tickets' do
+  let!(:project) { FactoryGirl.create(:project) }
+  # let!(:user) { FactoryGirl.create(:user) }
+  let!(:admin) { FactoryGirl.create(:admin_user) }
+
   before do
-    project = FactoryGirl.create(:project)
-    admin = FactoryGirl.create(:admin_user)
-    define_permission!(admin, :view, project)
-    define_permission!(admin, :"create tickerts", project)
     @email = admin.email
     sign_in_as!(admin)
+    define_permission!(admin, :view, project)
+    define_permission!(admin, :"create tickerts", project)
     
     visit '/'
     click_link project.name
