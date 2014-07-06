@@ -48,6 +48,7 @@ gem 'pry', '~> 0.10.0', group: :development
 gem 'pry-rails', '~> 0.3.2', group: :development
 
 gem 'cancan', '~> 1.6.10'
+gem 'carrierwave', '~> 0.10.0'
 
 
 group :test do
