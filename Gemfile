@@ -49,10 +49,12 @@ gem 'pry-rails', '~> 0.3.2', group: :development
 
 gem 'cancan', '~> 1.6.10'
 gem 'carrierwave', '~> 0.10.0'
+gem 'database_cleaner', '~> 1.3.0'
 
 
 group :test do
   gem 'capybara', "2.4.1"
   gem 'factory_girl_rails', '~> 4.4.1'
+  gem 'selenium-webdriver', '~> 2.42.0'
 end
 
