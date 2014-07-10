@@ -1,5 +1,4 @@
 <%= fields_for @ticket do |f| %>
-  <% number = 0 %>
   <p>
     <%= f.fields_for :assets, child_index: number do |asset| %>
       <p>
