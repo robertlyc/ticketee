@@ -28,6 +28,10 @@ class TicketsController < ApplicationController
   def edit
   end
   
+  def show
+    @comment = @ticket.comments.build
+  end
+  
   def update
     if @ticket.update(ticket_params)
       flash[:notice] = "Ticket has been updated."
