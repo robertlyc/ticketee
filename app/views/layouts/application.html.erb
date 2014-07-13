@@ -3,38 +3,38 @@
 <head>
   <title>
     <% if content_for?(:title) %>
-      <%= yield(:title)%>
-    <%else%>
+      <%= yield(:title) %>
+    <% else %>
       Ticketee
     <% end %>
-    </title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+  </title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav> 
-    <ul>
-      <li><%= link_to "Sign up", new_user_path %></li>
-      <li>
-        <% if current_user %>
-          Signed in as <%= current_user.email %>
-          <%= link_to "Sign out", signout_path, method: :delete %>
-          <% admins_only do %>
-            <%= link_to "Admin", admin_root_path %>
-          <% end %>
-        <% else %>
-          <%= link_to "Sign in", signin_path %>
-        <% end %>
-      </li>
-    </ul>
 
-  </nav>
-<% flash.each do |k,v| %>
-  <div class='flash' id = '<%= k%>' >
-    <%= v %>
+<% flash.each do |key, value| %>
+  <div class='flash' id='<%= key %>'>
+    <%= value %>
   </div>
 <% end %>
+
+<nav>
+  <% if current_user %>
+    Signed in as <%= current_user.email %>
+    <%= link_to "Sign out", signout_path, method: :delete %>
+    <% admins_only do %>
+      <%= link_to "Admin", admin_root_path %>
+    <% end %>
+  <% else %>
+    <ul>
+      <li><%= link_to "Sign up", new_user_path %></li>
+      <li><%= link_to "Sign in", signin_path %></li>
+    </ul>
+  <% end %>
+</nav>
+
 <%= yield %>
 
 </body>

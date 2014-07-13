@@ -1,5 +1,10 @@
-<div id='user'>
-  <h2><%= @user.name %></h2>
-  <%= link_to "Edit Profile", edit_user_path(@user) %>
-  <%= @user.email %>
-</div>
+<h1>Your Profile</h1>
+<p>
+  Username: <%= @user.name %>
+</p>
+<p>
+  Email: <%= @user.email %>
+</p>
+
+<%= link_to "Edit Profile", edit_user_path(@user) %>
+    
