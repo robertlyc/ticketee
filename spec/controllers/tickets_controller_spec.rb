@@ -55,7 +55,7 @@ RSpec.describe TicketsController, :type => :controller do
       delete :destroy, { project_id: project.id, id: ticket.id }
       
       expect(response).to redirect_to(project)
-      expect(flash[:alert]).to eql "You cannot delete tickets on this project."
+      expect(flash[:alert]).to eql "You cannot delete tickets from this project."
     end
   end
 end
