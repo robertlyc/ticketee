@@ -73,7 +73,7 @@ feature "Assiging permissions" do
     expect(page).to have_content("Ticket has been deleted.")
   end
   
-  scenario "Changing states for a ticket" do
+  scenario "Changing states for a ticket", js: true do
     check_permission_box "view", project
     check_permission_box "change_states", project
     click_button "Update"
