@@ -11,6 +11,10 @@ class ProjectsController < ApplicationController
     @project = Project.new
   end
 
+  def show
+    @tickets = @project.tickets
+  end
+
   def create
     @project = Project.new(project_params)
 
