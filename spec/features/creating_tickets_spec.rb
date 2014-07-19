@@ -8,6 +8,7 @@ feature 'Creating Tickets' do
     @email = admin.email
     sign_in_as!(admin)
     define_permission!(admin, :view, project)
+    define_permission!(admin, :tag, project)
     define_permission!(admin, :"create tickerts", project)
     
     visit '/'
